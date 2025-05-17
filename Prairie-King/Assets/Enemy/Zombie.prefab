@@ -405,7 +405,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootprefab: {fileID: 6677174194364746184, guid: 67965b8ff4e06704cb4704b2fc160533, type: 3}
   lootlist:
-  - {fileID: 11400000, guid: 945dbdd82f9b4324cb886e4a2f50d4d1, type: 2}
   - {fileID: 11400000, guid: a7cd3a972fb373e4dbbf71f272a9a870, type: 2}
   - {fileID: 11400000, guid: 6f9e8cec83156fb409b4136a2ba6696f, type: 2}
   - {fileID: 11400000, guid: 7c7326468c4fc664980ed40fd5ac6f53, type: 2}
@@ -415,7 +414,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 96d77f4db67bb344db0e99183cc2d364, type: 2}
   - {fileID: 11400000, guid: 2f8d138feadaf344fb43641fbe2ac2bc, type: 2}
   - {fileID: 11400000, guid: 5795ef0a08204af43aab5293471918ef, type: 2}
-  - {fileID: 11400000, guid: 095d87d74d76d9246bdfb09f0002dd76, type: 2}
 --- !u!82 &-3103737777344032880
 AudioSource:
   m_ObjectHideFlags: 0

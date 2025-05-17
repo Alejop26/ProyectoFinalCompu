@@ -959,7 +959,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 427195746}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -1052,6 +1052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3196edc48c0c1904c8291511043a5e01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeToHide: 1
 --- !u!1 &437396948
 GameObject:
   m_ObjectHideFlags: 0
@@ -13506,7 +13507,7 @@ PlayableDirector:
   m_InitialTime: 0
   m_SceneBindings:
   - key: {fileID: 8020881279016075765, guid: 8335cf617a85b8a4792932f2ae2339d5, type: 2}
-    value: {fileID: 427195749}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &2079083682
@@ -15209,7 +15210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthcontroller: {fileID: 9163861432091346294}
-  instruction: {fileID: 427195750}
+  instruction: {fileID: 0}
 --- !u!114 &9163861432091346307
 MonoBehaviour:
   m_ObjectHideFlags: 0

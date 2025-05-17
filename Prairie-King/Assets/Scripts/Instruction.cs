@@ -1,17 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Instruction : MonoBehaviour
 {
-    private void Update()
+    [SerializeField] private float timeToHide = 5f; // Puedes cambiar esto en el Inspector
+
+    private void Start()
     {
-        StartCoroutine(TurnOff());  
+        StartCoroutine(TurnOff());
     }
 
     private IEnumerator TurnOff()
     {
-        yield return new WaitForSeconds(5f);
-        this.gameObject.SetActive(false);   
+        yield return new WaitForSeconds(timeToHide);
+        this.gameObject.SetActive(false);
     }
 }

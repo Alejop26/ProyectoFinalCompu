@@ -23,7 +23,8 @@ public class Scenemanager : MonoBehaviour
     private IEnumerator OnDeath()
     {
         yield return new WaitForSeconds(3f);
-        SceneManager.LoadScene(1);
-        instruction.gameObject.SetActive(false);    
+        //escribimos en consola que el jugador ha muerto
+        Debug.Log("El jugador ha muerto");
+        
     }
 }

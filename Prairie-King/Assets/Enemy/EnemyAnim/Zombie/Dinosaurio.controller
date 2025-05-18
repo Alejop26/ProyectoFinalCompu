@@ -32,7 +32,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Zombie
+  m_Name: Dinosaurio
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsDead
@@ -86,7 +86,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 4d169dedd4fa5304ba22de406359205d, type: 2}
+  m_Motion: {fileID: 7400000, guid: 219701a5ea6fb1d4ba0c594e384bc99a, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -138,7 +138,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 7a2f753f7564acb4fa401353895c48ec, type: 2}
+  m_Motion: {fileID: 7400000, guid: 80f6501d016330b43a2fe1ab140bc6e8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

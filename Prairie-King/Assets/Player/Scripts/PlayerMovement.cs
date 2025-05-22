@@ -73,17 +73,39 @@ public class PlayerMovement : MonoBehaviour
         /*if (Input.GetKey(KeyCode.R)) StopSpawning.Invoke();*/
         //====================Disable player collider & stop spawning====================//
     }
-    void FixedUpdate()
+void FixedUpdate()
+{
+    Vector2 movement = Vector2.zero;
+
+    if (Input.GetKey(UpKey)) movement += Vector2.up;
+    if (Input.GetKey(DownKey)) movement += Vector2.down;
+    if (Input.GetKey(LeftKey)) movement += Vector2.left;
+    if (Input.GetKey(RightKey)) movement += Vector2.right;
+
+    SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+    if (sr != null)
     {
-        if (Input.GetKey(UpKey)) PlayerBody.MovePosition(PlayerBody.position + new Vector2(0, 1) * MoveSpeed * Time.fixedDeltaTime);
-        if (Input.GetKey(LeftKey)) PlayerBody.MovePosition(PlayerBody.position + new Vector2(-1, 0) * MoveSpeed * Time.fixedDeltaTime);
-        if (Input.GetKey(DownKey)) PlayerBody.MovePosition(PlayerBody.position + new Vector2(0, -1) * MoveSpeed * Time.fixedDeltaTime);
-        if (Input.GetKey(RightKey)) PlayerBody.MovePosition(PlayerBody.position + new Vector2(1, 0) * MoveSpeed * Time.fixedDeltaTime);
-        if (Input.GetKey(LeftKey) && Input.GetKey(UpKey)) PlayerBody.MovePosition(PlayerBody.position + new Vector2(-1, 1) * MoveSpeed2 * Time.fixedDeltaTime);
-        if (Input.GetKey(LeftKey) && Input.GetKey(DownKey)) PlayerBody.MovePosition(PlayerBody.position + new Vector2(-1, -1) * MoveSpeed2 * Time.fixedDeltaTime);
-        if (Input.GetKey(RightKey) && Input.GetKey(UpKey))  PlayerBody.MovePosition(PlayerBody.position + new Vector2(1, 1) * MoveSpeed2 * Time.fixedDeltaTime);
-        if (Input.GetKey(RightKey) && Input.GetKey(DownKey)) PlayerBody.MovePosition(PlayerBody.position + new Vector2(1, -1) * MoveSpeed2 * Time.fixedDeltaTime);
+        if (movement == Vector2.zero)
+        {
+            // Si está quieto, asegurar que el sprite esté activo
+            if (!sr.enabled)
+                sr.enabled = true;
+        }
+        else
+        {
+            // Si se mueve, también asegurar que el sprite esté activo
+            if (!sr.enabled)
+                sr.enabled = true;
+        }
     }
+
+    if (movement != Vector2.zero)
+    {
+        movement = movement.normalized;
+        PlayerBody.MovePosition(PlayerBody.position + movement * MoveSpeed * Time.fixedDeltaTime);
+    }
+}
+
 
     public void ChangeAnim(string newstate)
     {

@@ -12,6 +12,10 @@ public class CurrentState : MonoBehaviour
     [SerializeField] private Timercontroller timer;
     [SerializeField] private TextMeshProUGUI coinsCount;
 
+    [Header("Configuración de cambio de escena")]
+    [SerializeField] private string SceneWhenLivesEnd = "Level 4";
+    [SerializeField] private string SceneWhenTimeEnds = "Level 3";
+
     private bool isChangingScene = false;
 
     void Update()
@@ -21,18 +25,16 @@ public class CurrentState : MonoBehaviour
 
         Coin();
 
-        // Cambiar a "Level 1" si se acaban las vidas
         if (Lives <= 0 && !isChangingScene)
         {
             isChangingScene = true;
-            StartCoroutine(DelayedSceneChange("Level 1"));
+            StartCoroutine(DelayedSceneChange(SceneWhenLivesEnd));
         }
 
-        // Cambiar a "Level 2" si se acaba el tiempo
         if (Time <= 0 && !isChangingScene)
         {
             isChangingScene = true;
-            StartCoroutine(DelayedSceneChange("Level 2"));
+            StartCoroutine(DelayedSceneChange(SceneWhenTimeEnds));
         }
     }
 

@@ -6,7 +6,8 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public GameObject ZombiePrefab;
-    public GameObject DinosaurPrefab; // ← Nuevo campo visible en el Inspector
+    public GameObject DinosaurPrefab;
+    public GameObject MurcielagoPrefab; // ← Nuevo campo
 
     [SerializeField] private float SpawnRate;
     [SerializeField] private Transform[] Gates;
@@ -46,9 +47,13 @@ public class Spawner : MonoBehaviour
         for (int i = 0; i < take; ++i)
         {
             int randomGate = Random.Range(0, GateList.Count);
+            float rand = Random.value;
 
-            // 50% de probabilidad de que aparezca un dinosaurio o un zombi
-            if (Random.value < 0.5f && DinosaurPrefab != null)
+            if (rand < 0.33f && MurcielagoPrefab != null)
+            {
+                Instantiate(MurcielagoPrefab, GateList[randomGate].position, GateList[randomGate].rotation);
+            }
+            else if (rand < 0.66f && DinosaurPrefab != null)
             {
                 Instantiate(DinosaurPrefab, GateList[randomGate].position, GateList[randomGate].rotation);
             }

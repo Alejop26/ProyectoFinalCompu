@@ -163,7 +163,7 @@ public class UsePU : MonoBehaviour
     private IEnumerator UsingBandolier()
     {
         gun.FireRate = 0.065f;
-        gun.Damage = 4;
+        gun.Damage = 1;
         IsUsingBandolier = true;    
 
         yield return new WaitForSeconds(12);
@@ -372,7 +372,7 @@ public class UsePU : MonoBehaviour
     private IEnumerator UsingShotgun()
     {
         IsUsingShotgun = true;
-        gun.Damage = 4;
+        gun.Damage = 1;
 
         if (IsUsingBandolier) gun.FireRate = 0.065f;
 
@@ -408,7 +408,7 @@ public class UsePU : MonoBehaviour
     private IEnumerator UsingBadge()
     {
         IsUsingBadge = true;
-        gun.Damage = 4;
+        gun.Damage = 1;
         gun.FireRate = 0.095f;
 
         if (IsUsingBandolier) gun.FireRate = 0.065f;
